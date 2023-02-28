@@ -1,0 +1,33 @@
+from colorama import Fore, Back
+def bank():
+    balance = 3777
+    pin = 1111
+    print("Your PIN: ")
+    user_pin = int(input())
+
+    if pin == user_pin:
+        print(Fore.GREEN)
+        print("Access allowed!")
+        print(Fore.RESET)
+        print(Fore.LIGHTMAGENTA_EX)
+        print("How much money do you want to withdraw from the balance?: ")
+        print(Fore.RESET)
+        print(Fore.LIGHTGREEN_EX)
+        user_balance = int(input("Enter the amount($): "))
+        print(Fore.RESET)
+    else:
+        print(Fore.RED)
+        print("Access denied!")
+        print(Fore.RESET)
+        exit()
+    if user_balance > balance:
+        print(Fore.RED)
+        print("Not enough money!")
+        print(Fore.RESET)
+    elif user_balance <= balance:
+        print(Fore.GREEN)
+        print("The money has been successfully withdrawn from your account!")
+        print(Fore.RESET)
+
+while True:
+    bank()
