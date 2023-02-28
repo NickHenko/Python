@@ -1,0 +1,73 @@
+def repeat():
+    import math
+    import colorama
+    from colorama import Fore
+    print(Fore.CYAN)
+    i = input("Continue?(y/n): ")
+    if i == 'n':
+        print("Thanks for using my Calculator. Bye!")
+        exit()
+    if i == "y":
+        while True:
+            znhachenie()
+    else:
+        print("Wrong Value!")
+        repeat()
+
+
+
+
+def znhachenie():
+    import math
+    import colorama
+    from colorama import Fore
+    print(Fore.BLUE)
+    action = input("Select an action( +, -, /, *, pi ): ")
+    if action == 'pi':
+        print("Result: " + str(math.pi))
+        repeat()
+    try:
+        print(Fore.CYAN)
+        a = int(input("Enter the first value: "))
+    except ValueError:
+        print(Fore.RED)
+        print("Wrong Value!")
+        repeat()
+    try:
+        print(Fore.CYAN)
+        b = int(input("Enter the second value: "))
+    except ValueError:
+        print(Fore.RED)
+        print("Wrong Value!")
+        repeat()
+    if action == '+':
+        result = a + b
+        print(Fore.GREEN)
+        print('Result: ' + str(result))
+        repeat()
+    elif action == '-':
+        result = a - b
+        print(Fore.GREEN)
+        print('Result: ' + str(result))
+        repeat()
+    elif action == '/':
+        try:
+            result = a / b
+        except ZeroDivisionError:
+            result = 0
+            print(Fore.RED)
+            print("You can't divide by zero!")
+        print(Fore.GREEN)
+        print('Result: ' + str(result))
+        repeat()
+    elif action == '*':
+        result = a * b
+        print(Fore.GREEN)
+        print('Result: ' + str(result))
+        repeat()
+    else:
+        print(Fore.RED)
+        print("Wrong Value!")
+        repeat()
+while True:
+    znhachenie()
