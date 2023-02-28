@@ -65,7 +65,7 @@ def znhachenie():
         print(Fore.GREEN)
         print('Result: ' + str(result))
         repeat()
-    else:                            #Для работы else, нужно указывать elif, вместо кучи if
+    else:                            
         print(Fore.RED)
         print("Wrong Value!")
         repeat()
