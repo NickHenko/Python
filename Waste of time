@@ -1,0 +1,26 @@
+from colorama import Fore
+import time
+from timeit import default_timer as ti
+name = input('Your name?: ')
+
+def end():
+    b = input(f"Wow, that was cool,{Fore.LIGHTMAGENTA_EX}{name}{Fore.RESET}, do you want to do it again?(y/n): ")
+    if b == 'y':
+        sleep()
+    elif b == 'n':
+        print(f'Thank you for your time, {Fore.LIGHTMAGENTA_EX}{name}{Fore.RESET} :D Bye!')
+        exit()
+    else:
+        end()
+
+def sleep():
+    a = float(input(f"How many seconds would you like to wait, {Fore.LIGHTMAGENTA_EX}{name}{Fore.RESET}?: "))
+    start = ti()
+    time.sleep(a)
+    endd = ti()
+    print(f'{Fore.LIGHTMAGENTA_EX}{name}{Fore.RESET} Just spent {start-endd} seconds.')
+    time.sleep(0.8)
+    end()
+
+sleep()
+
