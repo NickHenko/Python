@@ -22,4 +22,4 @@ vlajnost = w.humidity
 speed = w.wind()['speed']
 status = w.detailed_status
 
-print("It's " + str(temperature) + '°C' + " in " + city + " right now. " + '\nHumidity: ' + str(vlajnost) + '%' + '\nWind Speed: ' + str(speed) + '\nIn the sky: ' + str(status))
+print(f"{Fore.LIGHTMAGENTA_EX}Temperature in {city}:{Fore.RESET}{Fore.LIGHTGREEN_EX}{str(temperature)}°C{Fore.RESET}" + f'{Fore.LIGHTMAGENTA_EX}\nHumidity:{Fore.RESET} {Fore.LIGHTGREEN_EX}{str(vlajnost)} % {Fore.RESET}' f'{Fore.LIGHTMAGENTA_EX}\nWind Speed:{Fore.RESET}  {Fore.LIGHTGREEN_EX}{str(speed)}{Fore.RESET}' f'{Fore.LIGHTMAGENTA_EX}\nIn the sky:{Fore.RESET} {Fore.LIGHTGREEN_EX}{str(status)}{Fore.RESET}')
